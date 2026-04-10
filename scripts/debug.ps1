@@ -26,7 +26,6 @@ dotnet publish src/Flow.Launcher.Plugin.FlClicker -c Debug -r win-x64 --no-self-
 
 dotnet publish "src/Flow.Launcher.Plugin.FlClicker" `
 -c Debug -r win-x64 --no-self-contained `
--o "bin\Debug\win-x64"
 
 $AppDataFolder = [Environment]::GetFolderPath("ApplicationData")
 $flowLauncherExe = "$env:LOCALAPPDATA\FlowLauncher\Flow.Launcher.exe"
@@ -39,7 +38,7 @@ if (Test-Path $flowLauncherExe) {
         Remove-Item -Recurse -Force "$AppDataFolder\FlowLauncher\Plugins\FlClicker"
     }
 
-    Copy-Item "bin\Debug\win-x64" "$AppDataFolder\FlowLauncher\Plugins\publish" -Recurse -Force
+    Copy-Item "artifacts\bin\Debug\win-x64" "$AppDataFolder\FlowLauncher\Plugins\publish" -Recurse -Force
     Rename-Item -Path "$AppDataFolder\FlowLauncher\Plugins\publish" -NewName "FlClicker"
 
     Start-Sleep -Seconds 2
