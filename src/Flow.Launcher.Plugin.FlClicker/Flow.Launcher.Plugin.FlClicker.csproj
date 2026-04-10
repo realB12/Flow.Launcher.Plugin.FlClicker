@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>Flow.Launcher.Plugin.FlClicker</AssemblyName>
+    <PackageId>Flow.Launcher.Plugin.FlClicker</PackageId>
+    <Authors>rene.baron@baronsolutions.ch</Authors>
+    <PackageProjectUrl>https://github.com/rene.baron@baronsolutions.ch/Flow.Launcher.Plugin.FlClicker</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/rene.baron@baronsolutions.ch/Flow.Launcher.Plugin.FlClicker</RepositoryUrl>
+    <PackageTags>flow-launcher flow-plugin</PackageTags>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Flow.Launcher.Plugin" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="plugin.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Settings.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Images\app.png" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Languages\*.*">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup> 
+
+<PropertyGroup>
+  <BaseOutputPath>..\..\artifacts\bin\</BaseOutputPath>
+  <BaseIntermediateOutputPath>..\..\artifacts\obj\</BaseIntermediateOutputPath>
+</PropertyGroup>
+
+</Project>  

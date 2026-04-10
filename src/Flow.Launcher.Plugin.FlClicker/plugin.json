@@ -1,0 +1,12 @@
+{
+    "ID": "D012345678-8037-ADA0-EVA0-1922FF8C157C",
+    "ActionKeyword": "click",
+    "Name": "FlClicker",
+    "Description": "a ClickUp Plugin for Flow-Launcher",
+    "Author": "rene.baron@baronsolutions.ch",
+    "Version": "1.0.0",
+    "Language": "csharp",
+    "Website": "https://github.com/realB12/FlClicker",
+    "IcoPath": "Images\\app.png",
+    "ExecuteFileName": "Flow.Launcher.Plugin.FlClicker.dll"
+}
