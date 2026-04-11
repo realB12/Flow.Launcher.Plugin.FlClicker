@@ -22,7 +22,7 @@ public class Main : IAsyncPlugin {
   private ClickUpClient? _client;
 
   // vv-- The version and Text that will appear when you prompt "click version"
-  private const string myCURRENT_VERSION = "04.10.22:14";
+  private const string myCURRENT_VERSION = "04.11.08:14";
   private const string myCURRENT_VERSION_DESCRIPTION =
       "Basic core function implementation";
 
