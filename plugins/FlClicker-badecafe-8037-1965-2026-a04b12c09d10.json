@@ -3,10 +3,10 @@
   "Name": "FlClicker",
   "Description": "provides efficient TaskList Management for ClickUp.com",
   "Author": "realB12",
-  "Version": "0.0.1",
+  "Version": "0.0.5",
   "Language": "csharp",
   "Website": "https://github.com/realB12/Flow.Launcher.Plugin.FlClicker",
   "UrlDownload": "",
   "UrlSourceCode": "https://github.com/realB12/Flow.Launcher.Plugin.FlClicker/tree/main/src/Flow.Launcher.Plugin.FlClicker", 
-  "IcoPath": "Plugin icon image's CDN URL, e.g. https://cdn.jsdelivr.net/gh/Flow-Launcher/Flow.Launcher.Plugin.HelloWorldPython@main/Images/app.png"
+  "IcoPath": "https://cdn.jsdelivr.net/gh/Flow-Launcher/Flow.Launcher.Plugin.HelloWorldPython@main/Images/app.png"
 }

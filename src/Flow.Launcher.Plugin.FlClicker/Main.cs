@@ -22,9 +22,9 @@ public class Main : IAsyncPlugin {
   private ClickUpClient? _client;
 
   // vv-- The version and Text that will appear when you prompt "click version"
-  private const string myCURRENT_VERSION = "04.11.08:14";
+  private const string myCURRENT_VERSION = "v0.0.5";
   private const string myCURRENT_VERSION_DESCRIPTION =
-      "Basic core function implementation";
+      "A testing release for testing the deployment process. Do not use in prouction!";
 
   /// <summary>
   /// Mandatory Init Function that runs once when the Plugin is activated with
