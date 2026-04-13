@@ -25,5 +25,9 @@ Additionally, you can add a property called $schema to enable validation and aut
   // ...
 }
 
+When VSC comes with a mistruct-warning you have to add the "https://www.flowlauncher.com/schemas/plugin.schema.json" path the VSC's list of trusted resources (just click on "fix the problem" and follow the process): 
+
+![Adding A Trusted Patah](./zPIC/AddingATrustedPatah.png)
+
 Now you should have auto-completion and file validation available for you in your IDE.
 
