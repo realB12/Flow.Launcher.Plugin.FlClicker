@@ -8,8 +8,8 @@
     <AssemblyName>Flow.Launcher.Plugin.FlClicker</AssemblyName>
     <PackageId>Flow.Launcher.Plugin.FlClicker</PackageId>
     <Authors>rene.baron@baronsolutions.ch</Authors>
-    <PackageProjectUrl>https://github.com/rene.baron@baronsolutions.ch/Flow.Launcher.Plugin.FlClicker</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/rene.baron@baronsolutions.ch/Flow.Launcher.Plugin.FlClicker</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/realB12/Flow.Launcher.Plugin.FlClicker</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/realB12/Flow.Launcher.Plugin.FlClicker</RepositoryUrl>
     <PackageTags>flow-launcher flow-plugin</PackageTags>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>

@@ -3,9 +3,9 @@ param(
     [string]$Version,
 
     [string]$RelSourcePath = "src/Flow.Launcher.Plugin.FlClicker",
-    [string]$PluginId = "D012345678-8037-ADA0-EVA0-1922FF8C157C",
+    [string]$PluginId = "badecafe-8037-1965-2026-a04b12c09d10",
     [string]$PluginName = "FlClicker",
-    [string]$Repo = "realB12/FlClicker",
+    [string]$Repo = "realB12/Flow.Launcher.Plugin.FlClicker",
     [string]$Framework = "net8.0-windows",
     [string]$Runtime = "win-x64"
 )
@@ -22,7 +22,7 @@ $Artifacts = Join-Path $Root "artifacts"         # Root/artifacts
 $PublishRoot = Join-Path $Artifacts "publish"    # Root/artifacts/publish
 $PackageRoot = Join-Path $Artifacts "package"    # Root/artifacts/package
 $ReleaseRoot = Join-Path $Artifacts "release"    # Root/artifacts/release
-$ZipName = "$PluginName-$Version.zip"            # FlClicker-0.1.5.zip
+$ZipName = "$PluginName-$Version.zip"            # FlClicker-0.0.5.zip
 $ZipPath = Join-Path $ReleaseRoot $ZipName       # Root/artifacts/release/FlClicker-0.1.5.zip
 
 Write-Host "Cleaning old artifacts..."
