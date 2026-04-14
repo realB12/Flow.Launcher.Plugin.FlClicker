@@ -1,16 +1,24 @@
 # FlClicker Release Notes
 
 ## Scope of Document
-Before we will publish an official release are adding here some notes about its purpose, about what is new and has changed, why and for which date the release is scheduled. 
+Before we will publish an official release, we will share here some notes about its purpose, about what is new and has changed, where it evenutally breaks with what we already had, why and for which date next release are scheduled. 
 
-The Version numbers here are identical with the GitHub's Release Tags you might use when you want to install a specific (older) version. 
+The version numbers below are identical with the GitHub Release Tags you want to use when installing a specific (older) version. Version-Namings follow [SemVer best practices](#semver-releasenumbers). 
 
+## v0.0.6 Initial TestVersion
+<span style="color:red; font-weight:bold">Attention</span>:This version is **for internal testing only**. 
+
+**NEVER install this version** as it contains draft,  preliminary code that is neither complete nor documented and will undergo major changes in the future. 
+
+This relase is **only for TECHNICAL end2end integration testing**. Goal is to check wether the Plugin-Project's Framework automation works, is accepted by the FlowLauncher-authorities and therefore "goes through", before we are adding a bulk of functionality.  
+
+This **functionality is neither complete**, nor can users modify their own settings. The current version runs again a dedicated ClickUp Test-Account!
+
+
+## Appendix
 ### SemVer ReleaseNumbers 
 Our version numbers for software realeases follow the industry standard for **Semantic Versioning (SemVer) 2.0.0**, that is structured as MAJOR.MINOR.PATCH (e.g., 1.5.2). 
 
 * **MAJOR**: Incompatible API changes.
 * **MINOR**: Functionality added in a backward-compatible manner.
 * **PATCH**: The industry standard for : Backward-compatible bug fixes
-
-## v0.0.1 Initial TestVersion
-<span style="color:red; font-weight:bold">ACHTUNG</span>:This version is for internal testing only. NEVER install this version as it contaisn draft preliminary code that is neither complete nor documented. 
