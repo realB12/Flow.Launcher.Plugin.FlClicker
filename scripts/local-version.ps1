@@ -1,6 +1,19 @@
+# local-version.ps1
+# =================
+# This PowerShell-script compiles the current sourceCode into a publishable "FlClicker-v0.x.y.zip" 
+# named distribution package to be found in the /artifacts/release subfolder and which will server 
+# as the input for the subsequent "publish-github-verions.ps1" script that will upload it to the
+# GitHub Repo and publish is as a new "v0.x.y"-named  Release. 
+#
+# Additionally, to support local testing, this script copies all required binaries and related 
+# resource files (from teh Languages and Images folders) into the locally installed FlowLauncher
+# app folder, after which the FlowLauncher.exe is stopped and restarted, so that the new version 
+# can be readily tested from the FlowLauncher's command-line: such as "click version" to get 
+# the current, hardcoded version from the Main.cs
+
+
 param(
-    [Parameter(Mandatory = $true)]
-    [string]$Version,
+    [string]$Version = "v0.0.6",
 
     [string]$RelSourcePath = "src/Flow.Launcher.Plugin.FlClicker",
     [string]$PluginId = "badecafe-8037-1965-2026-a04b12c09d10",
@@ -14,9 +27,6 @@ $ErrorActionPreference = "Stop"
 
 
 $Root = Resolve-Path "."   # C:\me\REPO\PRJ\FLClicker\40 DEV\VSC\Flow.Launcher.Plugin.FlClicker
-
-$AbsSourcePath = Join-Path $Root $RelSourcePath        # Root/src/Flow.Launcher.Plugin.FlClicker
-$BinFolder =  Join-Path $AbsSourcePath "bin"           # Root/src/Flow.Launcher.Plugin.FlClicker/bin
 
 $Artifacts = Join-Path $Root "artifacts"         # Root/artifacts
 $PublishRoot = Join-Path $Artifacts "publish"    # Root/artifacts/publish

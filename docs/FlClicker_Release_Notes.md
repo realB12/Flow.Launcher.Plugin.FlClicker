@@ -7,9 +7,12 @@ The version numbers below are identical with the GitHub Release Tags you want to
 
 ---
 
-**Current, still UNSTABLE Test-Relase is [v0.0.5](#v005-initial-testversion)**. 
+**Current, still UNSTABLE Test-Relase is [v0.0.6](#v006-initial-testversion)**. 
 
 ---
+
+
+## v0.0.6: Initial round-trip framework testing: do not use!
 
 ## v0.0.5: Initial round-trip framework testing: do not use!
 <span style="color:red; font-weight:bold">Attention</span>: This release is **for internal end2end round-trip framework testing only**. 
