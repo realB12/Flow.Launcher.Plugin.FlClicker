@@ -16,12 +16,12 @@ $Tag = "v$Version"
 $Title = "$PluginName - $Version"
 
 git add .
-git commit -m "release: $Version" 2>$null
+git commit -m "Created new productive Release: $PluginName-v$Version" 2>$null
 git tag $Tag
 git push
 git push origin $Tag
 
-# gh release create $Tag $ZipPath `
+gh release create $Tag $ZipPath `
 #    --repo $Repo `
 #   --title $Title `
 #   --notes "Release $Version"
