@@ -21,7 +21,9 @@ git tag $Tag
 git push
 git push origin $Tag
 
+# GitHub CLI (gh) is a command-line tool that lets you interact with GitHub directly from your terminal.
+# if not yet installed, install it with >winget install --id GitHub.cli 
 gh release create $Tag $ZipPath `
-#    --repo $Repo `
-#   --title $Title `
-#   --notes "Release $Version"
+--repo $Repo `
+--title $Title `
+--notes "Release $Version"
