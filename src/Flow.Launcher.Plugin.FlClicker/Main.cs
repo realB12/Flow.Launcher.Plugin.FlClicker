@@ -16,7 +16,7 @@ using System.Diagnostics;
 /// IAsyncPlugin with InitAsync and QueryAsync, and the query returns a list of
 /// results.
 /// </summary>
-public class Main : IAsyncPlugin {
+public class Main : IAsyncPlugin, ISettingProvider {
   private PluginInitContext _context = null!;
   private Settings _settings = new();
   private ClickUpClient? _client;
