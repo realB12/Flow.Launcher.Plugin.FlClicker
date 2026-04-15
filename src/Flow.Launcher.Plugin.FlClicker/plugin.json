@@ -1,6 +1,6 @@
 {
     "$schema": "https://www.flowlauncher.com/schemas/plugin.schema.json",
-    "ID": "badecafe-8037-1965-2026-a04b12c09d10",
+    "ID": "badecafe-8037-1965-2026-a04b12c09d12",
     "ActionKeyword": "click",
     "Name": "FlClicker",
     "Description": "provides efficient TaskList Management for ClickUp.com",
@@ -8,6 +8,8 @@
     "Version": "0.0.6",
     "Language": "csharp",
     "Website": "https://github.com/realB12/Flow.Launcher.Plugin.FlClicker",
-    "IcoPath": "Images\\app.png",
+    "IcoPath": "Images\\ClickUpIcon_256x256.png",
     "ExecuteFileName": "Flow.Launcher.Plugin.FlClicker.dll"
 }
+
+

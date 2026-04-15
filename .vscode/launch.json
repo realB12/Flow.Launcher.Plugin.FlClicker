@@ -8,12 +8,6 @@
             "script": "C:/me/REPO/PRJ/FLClicker/40 DEV/VSC/Flow.Launcher.Plugin.FlClicker/scripts/debug.ps1"
         },
         {
-            "name": "FC: Release",
-            "type": "PowerShell",
-            "request": "launch",
-            "script": "C:/me/REPO/PRJ/FLClicker/40 DEV/VSC/Flow.Launcher.Plugin.FlClicker/scripts/release.ps1"
-        },
-        {
             "name": "FC: Local Version",
             "type": "PowerShell",
             "request": "launch",

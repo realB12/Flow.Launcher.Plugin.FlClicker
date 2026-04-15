@@ -1,9 +1,9 @@
 # local-version.ps1
 # =================
 # This PowerShell-script compiles the current sourceCode into a publishable "FlClicker-v0.x.y.zip" 
-# named distribution package to be found in the /artifacts/release subfolder and which will server 
-# as the input for the subsequent "publish-github-verions.ps1" script that will upload it to the
-# GitHub Repo and publish is as a new "v0.x.y"-named  Release. 
+# named distribution package to be found in the /artifacts/release subfolder and which will serve 
+# as the input for the subsequent "publish-github-verions.ps1" script, that will upload it to the
+# GitHub Repo and publish is as a new "v0.x.y"-named GitHub Release. 
 #
 # Additionally, to support local testing, this script copies all required binaries and related 
 # resource files (from teh Languages and Images folders) into the locally installed FlowLauncher

@@ -8,5 +8,8 @@
   "Website": "https://github.com/realB12/Flow.Launcher.Plugin.FlClicker",
   "UrlDownload": "",
   "UrlSourceCode": "https://github.com/realB12/Flow.Launcher.Plugin.FlClicker/tree/main/src/Flow.Launcher.Plugin.FlClicker", 
-  "IcoPath": "https://cdn.jsdelivr.net/gh/realB12/Flow.Launcher.Plugin.FlClicker@main/src/Flow.Launcher.Plugin.FlClicker/Images/ClickUpIcon_256x256.png"
+  "Tested": false,
+  "IcoPath": "https://cdn.jsdelivr.net/gh/realB12/Flow.Launcher.Plugin.FlClicker@main/src/Flow.Launcher.Plugin.FlClicker/Images/ClickUpIcon_256x256.png",
+  "LatestReleaseDate": "2026-04-15T11:56:32Z",
+  "DateAdded": "2026-05-01T11:00:00Z"
 }
