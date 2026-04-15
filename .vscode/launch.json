@@ -2,6 +2,12 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "FC: Compile",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "C:/me/REPO/PRJ/FLClicker/40 DEV/VSC/Flow.Launcher.Plugin.FlClicker/scripts/compile.ps1"
+        },
+        {
             "name": "FC: Debug",
             "type": "PowerShell",
             "request": "launch",

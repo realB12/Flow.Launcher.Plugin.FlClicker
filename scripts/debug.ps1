@@ -24,9 +24,6 @@ Mind the enclosing " " for the file-path so that the "40 DEV" PathPartial is pro
 #     The command must refer to the *.csproj file WITHOUT! addin the *.csproj extention. 
 dotnet publish src/Flow.Launcher.Plugin.FlClicker -c Debug -r win-x64 --no-self-contained
 
-dotnet publish "src/Flow.Launcher.Plugin.FlClicker" `
--c Debug -r win-x64 --no-self-contained `
-
 $AppDataFolder = [Environment]::GetFolderPath("ApplicationData")
 $flowLauncherExe = "$env:LOCALAPPDATA\FlowLauncher\Flow.Launcher.exe"
 

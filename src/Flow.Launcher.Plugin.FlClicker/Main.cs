@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Windows.Controls; // for SettingsPanel creation
 
 /// <summary>
 /// Main plugin class for ClickUp integration with Flow Launcher.
@@ -17,14 +18,18 @@ using System.Diagnostics;
 /// results.
 /// </summary>
 public class Main : IAsyncPlugin, ISettingProvider {
+
+  /* GLOBAL Variables and Constants definition */
   private PluginInitContext _context = null!;
   private Settings _settings = new();
   private ClickUpClient? _client;
+  private string _settingsPath = string.Empty;
 
   // vv-- The version and Text that will appear when you prompt "click version"
   private const string myCURRENT_VERSION = "04.15.16.55";
   private const string myCURRENT_VERSION_DESCRIPTION =
-      "A testing release for testing the deployment process. Do not use in prouction!";
+      "A testing release for testing the deployment process. Do not use in " +
+      "prouction!";
 
   /// <summary>
   /// Mandatory Init Function that runs once when the Plugin is activated with
@@ -35,7 +40,12 @@ public class Main : IAsyncPlugin, ISettingProvider {
   public async Task InitAsync(PluginInitContext context) {
     _context = context;
     // reading the Settings.json file with the Token and List ID
+
+    _settingsPath = Path.Combine(
+        _context.CurrentPluginMetadata.PluginDirectory, "Settings.json");
+        
     LoadSettings();
+    RebuildClient();
 
     // creating a new ClickUpClient instance with injected TokenID
     if (!string.IsNullOrWhiteSpace(_settings.ClickUpToken)) {
@@ -64,6 +74,8 @@ public class Main : IAsyncPlugin, ISettingProvider {
   public async Task<List<Result>> QueryAsync(Query query,
                                              CancellationToken token) {
     var input = query.Search?.Trim() ?? "";
+
+    RebuildClient();
 
     if (string.IsNullOrWhiteSpace(input)) {
       return myReturnAsyncInfo(
@@ -122,6 +134,62 @@ public class Main : IAsyncPlugin, ISettingProvider {
     } /* Command Dispatching */
   } // QueryAsync()
 
+  /* old - can be deleted */
+  private void LoadSettingsOld() {
+    var settingsPath = Path.Combine(
+        _context.CurrentPluginMetadata.PluginDirectory, "Settings.json");
+
+    if (File.Exists(settingsPath)) {
+      var json = File.ReadAllText(settingsPath);
+      _settings = JsonSerializer.Deserialize<Settings>(json) ?? new Settings();
+    }
+  } // LoadSettingsOld()
+
+  /* new */
+  public Control CreateSettingPanel() {
+    return new SettingsControl(_settings, SaveSettings);
+  } // CreateSettingPanel()
+
+  /* new */
+  private void RebuildClient() {
+    _client = string.IsNullOrWhiteSpace(_settings.ClickUpToken)
+                  ? null
+                  : new ClickUpClient(_settings.ClickUpToken);
+  } // RebuildClient()
+  /* new */
+  private void LoadSettings() {
+    try {
+      if (File.Exists(_settingsPath)) {
+        var json = File.ReadAllText(_settingsPath);
+        var loaded = JsonSerializer.Deserialize<Settings>(json);
+
+        if (loaded != null) {
+          _settings = loaded;
+        }
+      }
+    } catch {
+      _settings = new Settings();
+    }
+  } // LoadSettings()
+  /* new */
+  private void SaveSettings() {
+    try {
+      var folder = Path.GetDirectoryName(_settingsPath);
+
+      if (!string.IsNullOrWhiteSpace(folder) && !Directory.Exists(folder)) {
+        Directory.CreateDirectory(folder);
+      }
+
+      var json = JsonSerializer.Serialize(
+          _settings, new JsonSerializerOptions { WriteIndented = true });
+
+      File.WriteAllText(_settingsPath, json);
+      RebuildClient();
+    } catch (Exception ex) {
+      _context.API.ShowMsg("ClickUp settings error", ex.Message);
+    }
+  } // SaveSettings()
+
   /* Helper function that generates the Result record */
   private static List<Result> myReturnAsyncInfo(string title,
                                                 string subTitle) => new() {
@@ -172,8 +240,9 @@ public class Main : IAsyncPlugin, ISettingProvider {
           _settings.ListId, includeClosed: false, token: token);
 
       if (tasks == null || tasks.Count == 0) {
-        return myReturnAsyncInfo("No tasks found",
-                    "The ClickUp list does not contain any open tasks");
+        return myReturnAsyncInfo(
+            "No tasks found",
+            "The ClickUp list does not contain any open tasks");
       }
 
       return tasks
@@ -207,16 +276,6 @@ public class Main : IAsyncPlugin, ISettingProvider {
       return myReturnAsyncInfo("ClickUp error", ex.Message);
     }
   }
-
-  private void LoadSettings() {
-    var settingsPath = Path.Combine(
-        _context.CurrentPluginMetadata.PluginDirectory, "Settings.json");
-
-    if (File.Exists(settingsPath)) {
-      var json = File.ReadAllText(settingsPath);
-      _settings = JsonSerializer.Deserialize<Settings>(json) ?? new Settings();
-    }
-  } // LoadSettings()
 
   /// <summary>
   /// Disposes the ClickUp client resource.
