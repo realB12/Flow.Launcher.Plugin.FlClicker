@@ -3,10 +3,13 @@
 * **[FlClicker-badecafe-8037-1965-2026-a04b12c09d10.json](../../plugins/FlClicker-badecafe-8037-1965-2026-a04b12c09d10.json.md)**
 
 ---
+FlowLauncher PluginManager relies on a locally installed **plugin.json**-named PluginManifest file that tells it where to look for required resources and where to get meta information about the Plugin's author, version, description, etc. 
 
-The mandatory **plugin.json** file **in the project's /src folder** is the local PluginsManifest files for your local plugin testing and is **NOT identical with the [GLOBAL PluginsManifest file!](../../plugins/FlClicker-badecafe-8037-1965-2026-a04b12c09d10.json.md)**
+However it is **NOT identical with the [GLOBAL PluginsManifest file!](../../plugins/FlClicker-badecafe-8037-1965-2026-a04b12c09d10.json.md)**
 
-It is required for your locally installed Flowlauncher.exe to understand how to communicate with your plugin. 
+Therefore your local plugin.json is still required in the plugin package. 
+
+In our code-base the **plugin.json** file lives **in the project's /src folder** 
 
 > <span style="color:red; font-weight:bold">Attention</span>: **This files is NOT identical with the "[FlClicker badecafe 8037 1965 2026 a04b12c09d10.json](../../plugins/FlClicker-badecafe-8037-1965-2026-a04b12c09d10.json.md)"-named PluginsManifestation file**, which you need to publish to the FlowCharter Repo [FlClicker badecafe 8037 1965 2026 a04b12c09d10.json](../../plugins/FlClicker-badecafe-8037-1965-2026-a04b12c09d10.json.md) to let users and FlowLauncher know publicly from where to load your Plugin!  
 > However **make sure, that the identical fields will contain identical values**!
@@ -46,7 +49,6 @@ with the following **fields**:
 }
 ```
 
-
 ### adding Schema information
 Additionally, you can add a "$schema"-named property to this plugins.json file, to enable validation and auto-completion in your VSC IDE: 
 
@@ -63,4 +65,7 @@ When VSC responds with a mistrust-warning, you have to add the "https://www.flow
 ![Adding A Trusted Patah](./zPIC/AddingATrustedPatah.png)
 
 Now you should have auto-completion and file validation available for you in your IDE.
+
+---
+
 
