@@ -2,7 +2,6 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Flow.Launcher.Plugin.ClickUp {
 public partial class SettingsControl : UserControl {
   private readonly Settings _settings;
   private readonly Action _saveAction;
@@ -26,5 +25,4 @@ public partial class SettingsControl : UserControl {
     MessageBox.Show("ClickUp settings saved.", "Flow Launcher Plugin",
                     MessageBoxButton.OK, MessageBoxImage.Information);
   }
-}
 }

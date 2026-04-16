@@ -16,7 +16,6 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RootNamespace>Flow.Launcher.Plugin.FlClicker</RootNamespace>
-    <AssemblyName>Flow.Launcher.Plugin.FlClicker/AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
