@@ -1,7 +1,9 @@
 # Settings.jsons
 * [Settings.cs](Settings.cs.md)
 
-Other than the [Settings.cs](Settings.cs.md) that, (that is just a FlowLauncher standard Helperfile that must remain "empty" and unchanged and must never contain the Token or ListID), this Settings.JSON file is ment to contain the ClickUp provided (default) values that allows the Plugin to connect and interact with the ClickUp API. 
+Other than the [Settings.cs](Settings.cs.md) (that is just a FlowLauncher standard Helperfile that must remain "empty" and unchanged and must never contain the Token or ListID), this Settings.JSON file is ment to contain **the ClickUp provided (default) values that allows the Plugin to connect and interact with the ClickUp API.** 
+
+<span style="color:red; font-weight:bold">Attention</span>: Insert actual access-Token values only for internal testing (to prevent you to insert the Token manually every time you compile/test a new version, but make sure, you have it deleted/modified befor a new [a new release is published](../../../../../DEV_MAN/07%20DEPLOY/_FlClicker_Deployment%20Guide.md)
 
 
 <span style="color:red; font-weight:bold">Attention</span> **Do not put comments into the JSON file** as the JSON format is not ment to include a comments. Using "_comments" keywords might do the trick, but will not be removed automatically when compiled for production and therefore might negatively impact the overall performance at startup resp. initial loadtime of the plugin.  

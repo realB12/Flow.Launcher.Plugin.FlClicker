@@ -1,5 +1,10 @@
 # Settings.cs
 
+* **[Settings Control.xaml.cs](SettingsControl.xaml.cs.md)**: the xmal-code-behind file that reads the seetings into the SettingsControl. 
+* **[Settings Control.xaml](SettingsControl.xaml.md)**: Defines the layout of the SettingsControl. 
+
+----
+
 This Settings.cs file is **just a standard helper-file.** **Do not change!!**
 
 It just stores the clickUp provided Access-Token and list-ID when they are read from either the Settings.json file (default) or the Plugin-Manager configuraton when the Plugin is called the first time. 
